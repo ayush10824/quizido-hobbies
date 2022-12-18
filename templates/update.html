@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+    Update -
+{% endblock title %}
+{% block body %}
+<div class="container my-3">
+    <h2>Update Your Details and Hobbies</h2>
+    <form action="/update/{{ object.id }}" method="POST">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control" value="{{ object.name }}" id="name" name="name">       
+        </div>
+        <div class="mb-3">
+          <label for="hobby" class="form-label">Your hobby</label>
+          <input type="text" class="form-control" value="{{ object.hobby }}" id="hobby" name="hobby">
+        </div>
+      
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+   </div>
+{% endblock body %}
